@@ -97,6 +97,7 @@ main{overflow-x:clip}
 .hero>p{animation:up .8s .3s both}
 .typer{margin:0 0 1.5rem;font:700 1.15rem Sora,sans-serif;animation:up .8s .45s both}
 .typer b{color:var(--teal)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .typer b{color:var(--sun)}}
 .caret{display:inline-block;width:3px;height:1.1em;margin-left:3px;background:var(--pink);vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
 .hero>.btns{animation:up .8s .6s both}
