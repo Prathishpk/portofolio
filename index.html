@@ -1,222 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Portfolio website of Prathish Kumar, a UI/UX enthusiast and web developer."
-  />
-  <title>Prathish Kumar Portfolio</title>
-
-  <link rel="stylesheet" href="style.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>D. Prathish Kumar – Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f2f7f5;--ink:#0d2b2a;--muted:#4d6b68;--panel:#fff;--line:#cfe0dc;--side:#0d2b2a;--sideink:#eaf7f4;--teal:#167a70;--violet:#6a5cff;--sun:#ffd84d;--pink:#ff5a7a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1b1a;--ink:#e9f6f3;--muted:#9cbdb8;--panel:#12302e;--line:#1f4542;--side:#06100f;--sideink:#eaf7f4}}
+:root[data-theme="dark"]{--bg:#0a1b1a;--ink:#e9f6f3;--muted:#9cbdb8;--panel:#12302e;--line:#1f4542;--side:#06100f;--sideink:#eaf7f4}
+html{scroll-behavior:smooth;scroll-padding-top:1rem}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Nunito Sans",system-ui,sans-serif;display:grid;grid-template-columns:300px 1fr;min-height:100vh}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;margin:0;line-height:1.12;letter-spacing:-.02em}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:4px}
+aside{background:var(--side);color:var(--sideink);padding:2.25rem 1.75rem;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;gap:1.5rem;overflow-y:auto}
+.av{width:84px;height:84px;border-radius:26px;background:var(--sun);color:#0d2b2a;display:grid;place-items:center;font:800 1.9rem Sora,sans-serif;transform:rotate(-6deg)}
+aside h1{font-size:1.5rem}
+aside p{margin:.4rem 0 0;color:rgba(234,247,244,.72);font-size:.95rem}
+aside nav{display:grid;gap:.15rem}
+aside nav a{text-decoration:none;padding:.5rem .75rem;border-radius:10px;color:#cfe8e3;font-weight:600}
+aside nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.sl{margin-top:auto;display:grid;gap:.4rem;font-size:.95rem}
+.sl a{color:var(--sun);text-decoration:none;font-weight:600;word-break:break-all}
+.sl a:hover{text-decoration:underline}
+main{padding:3.25rem clamp(1.25rem,5vw,4rem) 3rem;max-width:960px;width:100%}
+.hero h2{font-size:clamp(2.2rem,5.6vw,3.9rem);font-weight:800}
+.hero p{max-width:36rem;color:var(--muted);font-size:1.2rem;margin:1.25rem 0 1.75rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{padding:.8rem 1.5rem;border-radius:14px;font-weight:700;text-decoration:none;background:var(--ink);color:var(--bg)}
+.btn.alt{background:var(--sun);color:#0d2b2a}
+.btn:hover{background:var(--pink);color:#0d2b2a}
+section{padding-top:4rem}
+section>h3{font-size:clamp(1.6rem,3.5vw,2.2rem);margin-bottom:1.5rem}
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem}
+.about p{margin:0 0 1rem}
+.facts{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:.5rem 1.4rem;list-style:none;margin:0}
+.facts li{padding:.8rem 0;border-bottom:1px solid var(--line)}
+.facts li:last-child{border:0}
+.facts span{display:block;color:var(--muted);font-size:.9rem}
+.facts b{font-weight:700}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.tile{border-radius:24px;padding:1.75rem;display:flex;flex-direction:column;gap:.8rem}
+.tile.wide{grid-column:1/-1}
+.tile h4{margin:0;font:700 1.55rem/1.15 Sora,sans-serif;letter-spacing:-.02em}
+.tile .by{font-weight:700;font-size:.95rem;opacity:.85}
+.tile p{margin:0}
+.tile ul{list-style:none;padding:0;margin:auto 0 0;display:flex;flex-wrap:wrap;gap:.4rem}
+.tile li{font-size:.85rem;font-weight:700;padding:.15rem .7rem;border-radius:999px;background:rgba(255,255,255,.2)}
+.t1{background:var(--teal);color:#fff}
+.t2{background:var(--violet);color:#fff}
+.t3{background:var(--sun);color:#0d2b2a}
+.t3 li{background:rgba(13,43,42,.12)}
+.groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.g{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:1.3rem}
+.g h4{margin:0 0 .8rem;font:700 1.05rem Sora,sans-serif}
+.g ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.g li{font-size:.9rem;font-weight:600;padding:.15rem .7rem;border-radius:999px;background:var(--bg);border:1px solid var(--line)}
+.jobs{display:grid;gap:1rem}
+.job{background:var(--panel);border:1px solid var(--line);border-left:8px solid var(--pink);border-radius:18px;padding:1.3rem 1.5rem}
+.job:nth-child(2){border-left-color:var(--violet)}
+.job h4{margin:0;font:700 1.15rem Sora,sans-serif}
+.job small{color:var(--muted);font-weight:600}
+.job p{margin:.4rem 0 0;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.two div{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:1.4rem 1.6rem}
+.two h4{margin:0 0 .8rem;font:700 1.2rem Sora,sans-serif}
+.two ul{margin:0;padding-left:1.1rem}.two li{margin-bottom:.4rem}
+.contact{background:var(--pink);color:#0d2b2a;border-radius:28px;padding:2.25rem}
+.contact h3{margin-bottom:.8rem}
+.contact a.mail{font:800 clamp(1.2rem,3.6vw,2rem) Sora,sans-serif;word-break:break-all}
+.contact .lk{display:flex;gap:1.25rem;margin-top:1rem;font-weight:700;flex-wrap:wrap}
+footer{padding-top:2rem;color:var(--muted);font-size:.9rem}
+@media (max-width:900px){
+body{grid-template-columns:1fr}
+aside{position:static;height:auto;flex-direction:row;flex-wrap:wrap;align-items:center;padding:1.25rem}
+aside nav{display:flex;flex-wrap:wrap;gap:.25rem;width:100%;order:3}
+.sl{margin:0;order:2}
+.av{width:60px;height:60px;border-radius:18px;font-size:1.4rem}
+.about,.tiles,.two{grid-template-columns:1fr}
+.tile.wide{grid-column:auto}
+}
+main{overflow-x:clip}
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:4px;background:linear-gradient(90deg,var(--pink),var(--sun),var(--violet));transform-origin:left;transform:scaleX(0);z-index:20}
+.hero{position:relative;isolation:isolate}
+.blob{position:absolute;border-radius:50%;filter:blur(38px);opacity:.38;z-index:-1;pointer-events:none;animation:drift 11s ease-in-out infinite alternate}
+.b1{width:230px;height:230px;background:var(--pink);top:-30px;right:-20px}
+.b2{width:190px;height:190px;background:var(--violet);top:150px;right:200px;animation-duration:14s;animation-delay:-4s}
+.b3{width:150px;height:150px;background:var(--sun);bottom:-20px;right:30px;animation-duration:9s;animation-delay:-2s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-40px,30px) scale(1.18)}}
+@keyframes up{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.hero>h2{animation:up .8s .1s both}
+.hero>p{animation:up .8s .3s both}
+.typer{margin:0 0 1.5rem;font:700 1.15rem Sora,sans-serif;animation:up .8s .45s both}
+.typer b{color:var(--teal)}
+.caret{display:inline-block;width:3px;height:1.1em;margin-left:3px;background:var(--pink);vertical-align:text-bottom;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero>.btns{animation:up .8s .6s both}
+.av{animation:bob 4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:rotate(-6deg) translateY(0)}50%{transform:rotate(4deg) translateY(-7px)}}
+.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+.tile{transition:transform .25s ease,box-shadow .25s ease}
+.tile:hover{transform:translateY(-6px) rotate(-.5deg);box-shadow:0 18px 36px rgba(13,43,42,.22)}
+.js .tile.rv.in{transition:transform .25s ease,box-shadow .25s ease}
+.g li,.tile li{transition:transform .2s ease}
+.g li:hover,.tile li:hover{transform:translateY(-3px) scale(1.06)}
+aside nav a{transition:background .2s,color .2s,padding .2s}
+aside nav a:hover{padding-left:1.1rem}
+aside nav a.on{background:rgba(255,255,255,.12);color:#fff;box-shadow:inset 3px 0 0 var(--sun)}
+.btn{transition:transform .2s ease,background .2s}
+.btn:hover{transform:translateY(-3px)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media (max-width:900px){.b2{right:20px;top:200px}}
+body,aside{transition:background-color .4s,color .4s}
+.themes{display:grid;gap:.6rem;font-size:.9rem;color:rgba(234,247,244,.72)}
+.sws{display:flex;gap:.6rem}
+.sw{width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.35);cursor:pointer;padding:0;transition:transform .2s}
+.sw:hover{transform:scale(1.15)}
+.sw[aria-pressed="true"]{outline:3px solid var(--sun);outline-offset:3px}
+.sw:focus-visible,.modebtn:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.modebtn{justify-self:start;font:600 .88rem "Nunito Sans",sans-serif;color:var(--sideink);background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.35rem .9rem;cursor:pointer}
+.modebtn:hover{background:rgba(255,255,255,.2)}
+:root[data-theme="dark"] .typer b{color:var(--sun)}
+:root[data-theme="light"] .typer b{color:var(--teal)}
+:root[data-palette="sunset"]{--bg:#fff6ef;--ink:#3b1d0e;--muted:#7a5a48;--panel:#fff;--line:#f0d9c8;--side:#3b1d0e;--teal:#c2410c;--violet:#a21caf;--sun:#ffc857;--pink:#ff7a59}
+:root[data-palette="sunset"][data-theme="dark"]{--bg:#1c0f09;--ink:#fdeee4;--muted:#d0a994;--panel:#2b1810;--line:#4a2b1d;--side:#120a06}
+:root[data-palette="ocean"]{--bg:#eef5fb;--ink:#0b2239;--muted:#4a6580;--panel:#fff;--line:#cddcea;--side:#0b2239;--teal:#0b5fa5;--violet:#3a3fd1;--sun:#7de2ff;--pink:#ff9f68}
+:root[data-palette="ocean"][data-theme="dark"]{--bg:#08141f;--ink:#e6f1fb;--muted:#94b3cf;--panel:#0f2438;--line:#1c3a57;--side:#040b12}
+:root[data-palette="berry"]{--bg:#f7f1fb;--ink:#2a1038;--muted:#6a5280;--panel:#fff;--line:#e1d3ee;--side:#2a1038;--teal:#7b2cbf;--violet:#c2185b;--sun:#ffd23f;--pink:#4dd9c0}
+:root[data-palette="berry"][data-theme="dark"]{--bg:#150a1d;--ink:#f3e8fb;--muted:#bda5d3;--panel:#231233;--line:#3d2557;--side:#0d0612}
+@media (max-width:900px){.themes{order:4;width:100%}}
+.sws{flex-wrap:wrap}
+.ans{display:flex;flex-wrap:wrap;gap:.4rem}
+.an{font:600 .8rem "Nunito Sans",sans-serif;color:var(--sideink);background:transparent;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:.2rem .7rem;cursor:pointer}
+.an:hover{background:rgba(255,255,255,.14)}
+.an[aria-pressed="true"]{background:var(--sun);border-color:var(--sun);color:#0d2b2a}
+.an:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+:root[data-palette="forest"]{--bg:#f1f7ee;--ink:#14301a;--muted:#54705a;--panel:#fff;--line:#d3e3cc;--side:#14301a;--teal:#2f7d32;--violet:#6b4f1d;--sun:#e8d44d;--pink:#c6e87a}
+:root[data-palette="forest"][data-theme="dark"]{--bg:#0b1a0e;--ink:#e8f5e4;--muted:#a2c3a8;--panel:#12301a;--line:#1f4a2b;--side:#060f08}
+:root[data-palette="rose"]{--bg:#fdf1f4;--ink:#3a1020;--muted:#7e5565;--panel:#fff;--line:#f1d3dc;--side:#3a1020;--teal:#b0245a;--violet:#6d3bd2;--sun:#ffc2d1;--pink:#ffd27a}
+:root[data-palette="rose"][data-theme="dark"]{--bg:#1d0a12;--ink:#fde8ef;--muted:#d4a3b4;--panel:#2d1420;--line:#4d2335;--side:#12060b}
+:root[data-palette="graphite"]{--bg:#f3f4f6;--ink:#1a1d24;--muted:#5b6270;--panel:#fff;--line:#d9dce3;--side:#1a1d24;--teal:#2f3a4f;--violet:#2563eb;--sun:#ffd60a;--pink:#cfd4dd}
+:root[data-palette="graphite"][data-theme="dark"]{--bg:#0e1014;--ink:#eceef3;--muted:#9aa1b0;--panel:#181b22;--line:#2a2e38;--side:#07080b}
+:root[data-palette="aurora"]{--bg:#eef0ff;--ink:#151a45;--muted:#555c8f;--panel:#fff;--line:#d2d6f3;--side:#151a45;--teal:#4338ca;--violet:#0a7d5c;--sun:#8cf0c8;--pink:#ff8bd1}
+:root[data-palette="aurora"][data-theme="dark"]{--bg:#0b0e2b;--ink:#e9ebff;--muted:#a3a9e0;--panel:#141a48;--line:#262e70;--side:#05071a}
+.js[data-anim="slide"] .rv{transform:translateX(-60px)}
+.js[data-anim="slide"] .rv:nth-child(even){transform:translateX(60px)}
+.js[data-anim="zoom"] .rv{transform:scale(.82)}
+.js[data-anim="tilt"] .rv{transform:perspective(900px) rotateX(28deg) translateY(30px);transform-origin:50% 0}
+.js[data-anim="blur"] .rv{transform:none;filter:blur(14px);transition:opacity .8s ease,filter .8s ease}
+.js[data-anim] .rv.in{opacity:1;transform:none;filter:none}
+.js[data-anim="off"] .rv{opacity:1!important;transform:none!important;filter:none!important;transition:none!important}
+.js .tile.rv.in:hover{transform:translateY(-6px) rotate(-.5deg)}
+.px{position:fixed;z-index:-1;pointer-events:none;display:none;border-radius:50%}
+.p1{width:420px;height:420px;border:36px solid var(--pink);opacity:.22;right:-120px;top:20vh}
+.p2{width:260px;height:260px;background:var(--sun);opacity:.2;left:340px;bottom:-60px}
+:root[data-anim="parallax"] .px{display:block}
+:root[data-anim="parallax"] .p1{translate:0 calc(var(--sy,0)*-.22px);rotate:calc(var(--sy,0)*.04deg)}
+:root[data-anim="parallax"] .p2{translate:0 calc(var(--sy,0)*-.4px)}
+:root[data-anim="parallax"] .b1{translate:0 calc(var(--sy,0)*-.3px)}
+:root[data-anim="parallax"] .b2{translate:0 calc(var(--sy,0)*.15px)}
+:root[data-anim="parallax"] .b3{translate:0 calc(var(--sy,0)*-.5px)}
+:root[data-anim="parallax"] .hero>h2{translate:0 calc(var(--sy,0)*.1px)}
+:root[data-anim="parallax"] .hero>p{translate:0 calc(var(--sy,0)*.06px)}
+@media (prefers-reduced-motion:reduce){.js[data-anim] .rv{opacity:1!important;transform:none!important;filter:none!important}:root[data-anim] *{translate:none!important;rotate:none!important}}
+.sws{display:none}
+</style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
-
 <body>
-
-  <!-- Navbar -->
-  <header>
-    <nav aria-label="Main navigation">
-      <h1 class="logo">Prathish Kumar</h1>
-
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-
-    <img
-      src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
-      alt="Profile Image"
-      class="profile-img"
-    />
-
-    <h2>D. Prathish Kumar</h2>
-
-    <p>
-      UI/UX Enthusiast | CSE Student | Web Developer
-    </p>
-
-    <div class="buttons">
-
-      <a
-        href="https://www.linkedin.com/in/prathish-kumar-b359932a2/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn"
-        aria-label="Visit LinkedIn profile"
-      >
-        LinkedIn
-      </a>
-
-      <a
-        href="mailto:prsthishp183@gmail.com"
-        class="btn dark-btn"
-        aria-label="Send email"
-      >
-        Email Me
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- About -->
-  <section id="about" class="card">
-
-    <h2>About Me</h2>
-
-    <p>
-      I am a 3rd Year Computer Science Engineering student at
-      St. Annes College of Engineering and Technology.
-      I am passionate about UI/UX design, web development,
-      cloud technologies, and business communication.
-
-      I enjoy learning modern technologies and building
-      creative and responsive websites.
-    </p>
-
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="card">
-
-    <h2>Skills</h2>
-
-    <div class="skills-container">
-
-      <div class="skill">HTML</div>
-      <div class="skill">CSS</div>
-      <div class="skill">JavaScript</div>
-      <div class="skill">UI/UX Design</div>
-      <div class="skill">PHP</div>
-      <div class="skill">Google Cloud</div>
-      <div class="skill">GitHub</div>
-      <div class="skill">Business Communication</div>
-
-    </div>
-
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="card">
-
-    <h2>Education</h2>
-
-    <div class="education-box">
-
-      <h3>B.E Computer Science Engineering</h3>
-
-      <p>
-        St. Annes College of Engineering and Technology
-      </p>
-
-      <span>3rd Year Student</span>
-
-    </div>
-
-  </section>
-
-  <!-- Certifications -->
-  <section class="card">
-
-    <h2>Certifications</h2>
-
-    <div class="cert-box">
-
-      <h3>Google Cloud Engineer Certificate</h3>
-
-      <p>
-        Completed cloud technology learning and practical concepts.
-      </p>
-
-    </div>
-
-    <div class="cert-box">
-
-      <h3>UI/UX Course - Naan Mudhalvan</h3>
-
-      <p>
-        Completed UI/UX fundamentals and interface design practices.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="card">
-
-    <h2>Projects</h2>
-
-    <div class="project-container">
-
-      <div class="project-box">
-
-        <h3>UI/UX Practice Designs</h3>
-
-        <p>
-          Created mobile-friendly interface concepts and
-          modern UI layouts.
-        </p>
-
-      </div>
-
-      <div class="project-box">
-
-        <h3>Basic Web Development Projects</h3>
-
-        <p>
-          Developed responsive web pages using HTML,
-          CSS and JavaScript.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="card">
-
-    <h2>Contact</h2>
-
-    <p>📧 Email: prsthishp183@gmail.com</p>
-
-    <p>📱 Phone: 6380667606</p>
-
-    <p>
-      🔗 LinkedIn:
-
-      <a
-        href="https://www.linkedin.com/in/prathish-kumar-b359932a2/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View Profile
-      </a>
-    </p>
-
-  </section>
-
-  <!-- Footer -->
-  <footer>
-
-    <p>
-      © 2026 D. Prathish Kumar | Portfolio Website
-    </p>
-
-  </footer>
-
-  <script src="script.js"></script>
-
+<div id="bar" aria-hidden="true"></div>
+<div class="px p1" aria-hidden="true"></div><div class="px p2" aria-hidden="true"></div>
+<aside>
+<div class="av" aria-hidden="true">PK</div>
+<div><h1>Prathish Kumar</h1><p>Web developer and AI/ML student</p></div>
+<nav aria-label="Sections"><a href="#top">Home</a><a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+<div class="themes">
+<div class="sws">
+<button class="sw" data-p="mint" style="background:linear-gradient(135deg,#167a70 50%,#ffd84d 50%)" aria-label="Mint theme" aria-pressed="true"></button>
+<button class="sw" data-p="sunset" style="background:linear-gradient(135deg,#c2410c 50%,#ffc857 50%)" aria-label="Sunset theme" aria-pressed="false"></button>
+<button class="sw" data-p="ocean" style="background:linear-gradient(135deg,#0b5fa5 50%,#7de2ff 50%)" aria-label="Ocean theme" aria-pressed="false"></button>
+<button class="sw" data-p="berry" style="background:linear-gradient(135deg,#7b2cbf 50%,#ffd23f 50%)" aria-label="Berry theme" aria-pressed="false"></button>
+<button class="sw" data-p="forest" style="background:linear-gradient(135deg,#2f7d32 50%,#e8d44d 50%)" aria-label="Forest theme" aria-pressed="false"></button>
+<button class="sw" data-p="rose" style="background:linear-gradient(135deg,#b0245a 50%,#ffc2d1 50%)" aria-label="Rose theme" aria-pressed="false"></button>
+<button class="sw" data-p="graphite" style="background:linear-gradient(135deg,#2f3a4f 50%,#ffd60a 50%)" aria-label="Graphite theme" aria-pressed="false"></button>
+<button class="sw" data-p="aurora" style="background:linear-gradient(135deg,#4338ca 50%,#8cf0c8 50%)" aria-label="Aurora theme" aria-pressed="false"></button>
+</div>
+<button id="mode" class="modebtn" type="button">Switch to dark</button>
+<span>Scroll animation</span>
+<div class="ans">
+<button class="an" data-a="fade" aria-pressed="true">Fade up</button>
+<button class="an" data-a="slide" aria-pressed="false">Slide</button>
+<button class="an" data-a="zoom" aria-pressed="false">Zoom</button>
+<button class="an" data-a="tilt" aria-pressed="false">Tilt</button>
+<button class="an" data-a="blur" aria-pressed="false">Blur in</button>
+<button class="an" data-a="parallax" aria-pressed="false">Parallax</button>
+<button class="an" data-a="off" aria-pressed="false">Off</button>
+</div></div>
+<div class="sl"><a href="https://github.com/Prathishpk">GitHub</a><a href="https://www.linkedin.com/in/prathish-kumar-b359932a2/">LinkedIn</a></div>
+</aside>
+
+<main id="top">
+<header class="hero">
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<h2>I build websites and train models to forecast what happens next.</h2>
+<p>I'm a final-year computer science student. I've built responsive sites for clients and companies, and I'm now focused on AI and machine learning.</p>
+<p class="typer">I work with <b id="typed">Python</b><span class="caret"></span></p>
+<div class="btns"><a class="btn" href="#projects">See my work</a><a class="btn alt" href="#contact">Say hello</a></div>
+</header>
+
+<section id="about"><h3>About me</h3>
+<div class="about">
+<div>
+<p>I'm studying B.E. Computer Science and Engineering at St. Anne's College of Engineering and Technology. I enjoy building things that people can open and use, from web pages to forecasting systems.</p>
+<p>I've interned in web development at Askan Technology and Internova Labs, and I learned design through the Naan Mudhalvan UI/UX program.</p>
+<p>I also play cricket at district and zonal level.</p>
+</div>
+<ul class="facts">
+<li><span>Studying</span><b>B.E. CSE, graduating 2027</b></li>
+<li><span>College</span><b>St. Anne's College of Engineering and Technology</b></li>
+<li><span>Focus</span><b>AI/ML and web development</b></li>
+<li><span>Also into</span><b>Cloud and UI/UX</b></li>
+</ul></div></section>
+
+<section id="projects"><h3>Projects</h3>
+<div class="tiles">
+<article class="tile t1 wide"><span class="by">Final-year team project</span><h4>Retail Demand Forecasting using Lambda Architecture</h4>
+<p>Forecasts retail demand by combining batch and real-time processing, based on an IEEE paper. Forecasts come from XGBoost and Prophet models. Modules cover data ingestion, batch and real-time layers, a Flask serving layer with MySQL, and a React dashboard.</p>
+<ul><li>Python</li><li>Flask</li><li>Kafka</li><li>Spark</li><li>Hadoop</li><li>React.js</li><li>XGBoost</li><li>Prophet</li></ul></article>
+
+<article class="tile t2"><span class="by">In progress</span><h4>JARVIS, a personal voice assistant</h4>
+<p>Turns speech into text, answers with an LLM, speaks the reply, and runs a safe list of predefined commands. A web dashboard sits on top.</p>
+<ul><li>Python</li><li>FastAPI</li><li>SQLite</li><li>HTML/CSS/JS</li></ul></article>
+
+<article class="tile t3"><span class="by">Built during my Askan internship</span><h4>KubePilot, a Kubernetes platform website</h4>
+<p>A responsive SaaS site with sections for features, workflow, cloud integrations, pricing, dashboard preview, architecture, FAQ and docs.</p>
+<ul><li>HTML</li><li>CSS</li><li>Responsive design</li></ul></article>
+</div></section>
+
+<section id="skills"><h3>Skills</h3>
+<div class="groups">
+<div class="g"><h4>Languages</h4><ul><li>Python</li><li>SQL</li><li>PHP</li><li>JavaScript</li><li>HTML5</li><li>CSS3</li><li>Java (basics)</li></ul></div>
+<div class="g"><h4>AI/ML and LLMs</h4><ul><li>XGBoost</li><li>Prophet</li><li>LLMs</li><li>Prompt engineering</li><li>Generative AI</li></ul></div>
+<div class="g"><h4>Cloud and DevOps</h4><ul><li>GCP</li><li>Kubernetes</li><li>Docker</li><li>Terraform</li><li>BigQuery</li><li>Vertex AI</li></ul></div>
+<div class="g"><h4>Web and design</h4><ul><li>WordPress</li><li>Elementor</li><li>WooCommerce</li><li>Figma</li><li>Canva</li></ul></div>
+<div class="g"><h4>Tools</h4><ul><li>Git</li><li>GitHub</li><li>VS Code</li></ul></div>
+</div></section>
+
+<section id="experience"><h3>Experience</h3>
+<div class="jobs">
+<div class="job"><h4>Web Development Intern, Askan Technology Private Limited</h4><small>Puducherry, 1 month, 2026</small><p>Built responsive interfaces in HTML and CSS, including the KubePilot website, and worked on testing, debugging and interface refinement.</p></div>
+<div class="job"><h4>Summer Web Development Intern, Internova Labs</h4><small>2026</small><p>Built and customized websites with WordPress and Elementor, and worked on e-commerce with WooCommerce.</p></div>
+</div></section>
+
+<section><div class="two">
+<div><h4>Certifications</h4><ul>
+<li>Google Cloud Skills Boost: Cloud Engineer Learning Path</li>
+<li>Google Cloud: Vertex AI Fundamentals</li>
+<li>Google Cloud: BigQuery for Machine Learning</li>
+<li>Google Cloud: Generative AI Fundamentals</li>
+<li>UI/UX Design, Naan Mudhalvan Program</li>
+<li>Building AI Applications with LLMs workshop, 2026</li>
+<li>Workshop on PHP</li></ul></div>
+<div><h4>Achievements</h4><ul>
+<li>Participated in a national-level symposium</li>
+<li>Participated in the CM Trophy competition</li>
+<li>District and zonal level cricket player</li></ul></div>
+</div></section>
+
+<section id="contact"><div class="contact"><h3>Let's work together</h3>
+<p style="margin:0 0 .6rem">I'm open to internships and AI/ML roles. Email is the fastest way to reach me.</p>
+<a class="mail" href="mailto:prsthishp183@gmail.com">prsthishp183@gmail.com</a>
+<div class="lk"><a href="https://github.com/Prathishpk">GitHub</a><a href="https://www.linkedin.com/in/prathish-kumar-b359932a2/">LinkedIn</a></div>
+</div></section>
+<footer>© 2026 D. Prathish Kumar</footer>
+</main>
+<script>
+(function(){
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var bar=document.getElementById('bar');
+function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.transform='scaleX('+(m>0?h.scrollTop/m:0)+')'}
+addEventListener('scroll',prog,{passive:true});prog();
+var els=document.querySelectorAll('section>h3,.about>*,.tile,.g,.job,.two>div,.contact');
+if(!rm&&'IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+els.forEach(function(el){var i=Array.prototype.indexOf.call(el.parentNode.children,el);el.classList.add('rv');el.style.transitionDelay=(i%4)*100+'ms';io.observe(el)});
+}else{els.forEach(function(el){el.classList.add('in')})}
+var links=document.querySelectorAll('aside nav a');
+if('IntersectionObserver' in window){
+var so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})}})},{rootMargin:'-35% 0px -60% 0px'});
+document.querySelectorAll('section[id]').forEach(function(s){so.observe(s)});
+}
+if(rm)return;
+var words=['Python','React','Flask','XGBoost','Google Cloud','WordPress','FastAPI'],t=document.getElementById('typed'),w=0,c=t.textContent.length,del=true;
+function tick(){var word=words[w];
+if(del){c--;if(c<=0){del=false;w=(w+1)%words.length}}else{c++;if(c>=words[w].length){del=true;t.textContent=words[w];return setTimeout(tick,1500)}}
+t.textContent=words[w].slice(0,Math.max(c,0));setTimeout(tick,del?45:85)}
+setTimeout(tick,1800);
+})();
+</script>
+<script>
+(function(){
+var root=document.documentElement,KEY='pk-theme2',saved={};
+try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+var mode=saved.mode||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'),pal='ocean';
+var btns=document.querySelectorAll('.sw'),tg=document.getElementById('mode');
+function apply(){
+root.setAttribute('data-theme',mode);
+if(pal==='mint'){root.removeAttribute('data-palette')}else{root.setAttribute('data-palette',pal)}
+btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-p')===pal))});
+tg.textContent=mode==='dark'?'Switch to light':'Switch to dark';
+try{localStorage.setItem(KEY,JSON.stringify({mode:mode,palette:pal}))}catch(e){}
+}
+btns.forEach(function(b){b.addEventListener('click',function(){pal=b.getAttribute('data-p');apply()})});
+tg.addEventListener('click',function(){mode=mode==='dark'?'light':'dark';apply()});
+apply();
+})();
+</script>
+<script>
+(function(){
+var root=document.documentElement,K='pk-anim',a='fade';
+try{a=localStorage.getItem(K)||'fade'}catch(e){}
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var btns=document.querySelectorAll('.an'),io=null,ticking=false;
+if(!rm&&'IntersectionObserver' in window){io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12})}
+function sy(){root.style.setProperty('--sy',String(window.scrollY||0));ticking=false}
+addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(sy)}},{passive:true});sy();
+function apply(replay){
+root.setAttribute('data-anim',a);
+btns.forEach(function(b){b.setAttribute('aria-pressed',String(b.getAttribute('data-a')===a))});
+try{localStorage.setItem(K,a)}catch(e){}
+if(replay&&io&&a!=='off'){document.querySelectorAll('.rv').forEach(function(el){el.classList.remove('in');io.unobserve(el);io.observe(el)})}
+}
+btns.forEach(function(b){b.addEventListener('click',function(){a=b.getAttribute('data-a');apply(true)})});
+apply(false);
+})();
+</script>
 </body>
 </html>
